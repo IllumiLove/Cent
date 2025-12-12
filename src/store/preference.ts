@@ -4,7 +4,7 @@ import {
     type PersistOptions,
     persist,
 } from "zustand/middleware";
-import { getBrowserLang, type LocaleName } from "@/locale/utils";
+import type { LocaleName } from "@/locale/utils";
 
 type State = {
     locale: LocaleName;
@@ -29,7 +29,7 @@ type Persist<S> = (
 
 export const usePreferenceStore = create<Store>()(
     (persist as Persist<Store>)(
-        (set, get) => {
+        () => {
             return {
                 // 預設使用中文，後續切換會持久化
                 locale: "zh",
@@ -45,10 +45,14 @@ export const usePreferenceStore = create<Store>()(
             storage: createJSONStorage(() => localStorage),
             // 升級版本時強制將語言重置為中文，確保默認繁體/中文生效
             version: 1,
-            migrate: async (persistedState: any, version) => {
+            migrate: async (
+                persistedState: unknown,
+                _version: number,
+            ): Promise<Store> => {
                 // 無論舊版本為何，升級時統一改為 zh
+                const state = (persistedState ?? {}) as Partial<Store>;
                 return {
-                    ...(persistedState ?? {}),
+                    ...state,
                     locale: "zh" as LocaleName,
                 } as Store;
             },
