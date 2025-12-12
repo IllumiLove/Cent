@@ -11,8 +11,8 @@ Cent 是一個 **完全免費、開源的多人協作記賬 Web App**，
 基於 **GitHub 倉庫** 實現數據同步與版本控制，無需服務器，即可實現跨平臺實時同步。
 
 🔗 **在線體驗**：[https://cent.linkai.work](https://cent.linkai.work)  
-💾 **開源倉庫**：[https://github.com/glink25/Cent](https://github.com/glink25/Cent)  
-📖 **博客**：[https://glink25.github.io/tag/Cent/](https://glink25.github.io/tag/Cent/)  
+💾 **開源倉庫**：[https://github.com/IllumiLove/Cent/tree/main](https://github.com/IllumiLove/Cent/tree/main)  
+📖 **博客**：[https://illumi.love/](https://illumi.love/)  
 
 > [Cent 1.0 正式發布 🎉](https://glink25.github.io/edit/?path=Cent-10-%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83-)
 
@@ -95,7 +95,7 @@ Cent 內置一套自定義的增量同步策略，僅同步增量差異：
 4. 所有賬本與數據均存儲於你的 GitHub 倉庫中  
 
 > 出於安全考慮，self-hosted 方式無法支持 Github/Gitee 一鍵登錄，需要自行在Github/Gitee設定頁面生成具有Repo讀寫權限的token，通過手動輸入token功能使用。
-Cent使用Cloudflare Workers部署了一個線上鑒權服務，該服務只針對受信任的功能變數名稱提供服務。如果需要快捷登錄服務，可以參考這個項目[cent-github-backend](https://github.com/glink25/cent-github-backend)項目創建自己的後端服務，並自己申請對應平臺的OAuth app。
+Cent使用Cloudflare Workers部署了一個線上鑒權服務，該服務只針對受信任的功能變數名稱提供服務。如果需要快捷登錄服務，可以參考這個項目[cent-github-backend](https://github.com/IllumiLove/Cent/tree/main-github-backend)項目創建自己的後端服務，並自己申請對應平臺的OAuth app。
 
 ---
 
@@ -118,7 +118,7 @@ Cent 歡迎所有開發者與用戶參與貢獻，提交代碼前請參考[貢�
 
 ```bash
 # 克隆項目
-git clone https://github.com/glink25/Cent.git
+git clone https://github.com/IllumiLove/Cent/tree/main.git
 
 # 安裝依賴
 pnpm install
@@ -184,8 +184,8 @@ Cent is a **completely free, open-source, collaborative accounting Web App**,
 which uses a **GitHub Repository** for data synchronization and version control, enabling real-time cross-platform sync without a server.
 
 🔗 **Live Demo**: [https://cent.linkai.work](https://cent.linkai.work)  
-💾 **Open Source Repository**: [https://github.com/glink25/Cent](https://github.com/glink25/Cent)  
-📖 **Blog**: [https://glink25.github.io/tag/Cent/](https://glink25.github.io/tag/Cent/)  
+💾 **Open Source Repository**: [https://github.com/IllumiLove/Cent/tree/main](https://github.com/IllumiLove/Cent/tree/main)  
+📖 **Blog**: [https://illumi.love/](https://illumi.love/)  
 
 ---
 
@@ -261,7 +261,7 @@ The synchronization logic has been abstracted and encapsulated, with future supp
 4. All ledgers and data are stored in your GitHub repositories  
 
 > For security reasons, the self-hosted method cannot support GitHub/Gitee one-click-authentication. You will need to manually generate a token with read and write permissions for the repository (Repo) on the Github/Gitee settings page, and use it through the manual token input feature.
-Cent uses Cloudflare Workers to deploy an online authentication service, which only provides services for trusted domains. If you require a quick login service, you can refer to the project [cent-github-backend](https://github.com/glink25/cent-github-backend) to create your own backend service and apply for an OAuth app on the corresponding platform yourself.
+Cent uses Cloudflare Workers to deploy an online authentication service, which only provides services for trusted domains. If you require a quick login service, you can refer to the project [cent-github-backend](https://github.com/IllumiLove/Cent/tree/main-github-backend) to create your own backend service and apply for an OAuth app on the corresponding platform yourself.
 
 ---
 
@@ -282,7 +282,7 @@ Cent welcomes all developers and users to contribute:
 
 ```bash
 # Clone the project
-git clone [https://github.com/glink25/Cent.git](https://github.com/glink25/Cent.git)
+git clone [https://github.com/IllumiLove/Cent/tree/main.git](https://github.com/IllumiLove/Cent/tree/main.git)
 
 # Install dependencies
 pnpm install

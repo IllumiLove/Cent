@@ -4,13 +4,15 @@ export const locales = [
     {
         name: "zh",
         fetcher: () => import("./lang/zh.json"),
-        matcher: (_l: string) => _l.includes("zh-CN"),
-        label: "中文-简体",
+        // Match all Chinese locales (zh, zh-CN, zh-TW, etc.)
+        matcher: (_l: string) => _l.toLowerCase().startsWith("zh"),
+        label: "中文",
     },
     {
         name: "en",
         fetcher: () => import("./lang/en.json"),
-        matcher: (_l: string) => true,
+        // Only match explicit English locales
+        matcher: (_l: string) => _l.toLowerCase().startsWith("en"),
         label: "English",
     },
 ] as const;

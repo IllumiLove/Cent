@@ -31,7 +31,8 @@ export const usePreferenceStore = create<Store>()(
     (persist as Persist<Store>)(
         (set, get) => {
             return {
-                locale: getBrowserLang(),
+                // 預設使用中文，後續切換會持久化
+                locale: "zh",
                 autoLocateWhenAddBill: false,
                 readClipboardWhenReduceMotionChanged: false,
                 smartPredict: false,
@@ -42,7 +43,15 @@ export const usePreferenceStore = create<Store>()(
         {
             name: "preference-store",
             storage: createJSONStorage(() => localStorage),
-            version: 0,
+            // 升級版本時強制將語言重置為中文，確保默認繁體/中文生效
+            version: 1,
+            migrate: async (persistedState: any, version) => {
+                // 無論舊版本為何，升級時統一改為 zh
+                return {
+                    ...(persistedState ?? {}),
+                    locale: "zh" as LocaleName,
+                } as Store;
+            },
         },
     ),
 );
